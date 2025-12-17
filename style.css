@@ -1,0 +1,244 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff; /* Blue */
+    --string-color: #a5d6ff;
+    --keyword-color: #ff7b72;
+    --comment-color: #8b949e;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --success-color: #238636;
+    /* Define Nav Height for Scroll Offset */
+    --nav-height: 70px; 
+    /* Define a slightly larger offset to ensure clearance */
+    --scroll-offset: calc(var(--nav-height) + 15px); 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Syntax Highlighting Classes (Used in HTML for about/contact blocks) */
+.keyword { color: var(--keyword-color); }
+.accent { color: var(--accent-color); }
+.comment { color: var(--comment-color); }
+.string { color: var(--string-color); }
+
+/* Navigation */
+nav {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 100;
+    padding-top: 10px;
+    height: calc(var(--nav-height) - 10px); 
+    box-sizing: border-box; 
+    padding-left: 20px; /* Added padding for small screens */
+    padding-right: 20px;
+}
+.nav-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-top: 2px solid transparent;
+    font-size: 0.9rem;
+}
+.nav-item:hover { color: var(--accent-color); border-top-color: var(--accent-color); }
+
+/* Header & Resume Button */
+header { margin-bottom: 60px; position: relative; }
+h1 { font-size: 2.5rem; margin: 0; color: var(--accent-color); }
+h2 { font-size: 1.2rem; color: var(--comment-color); font-weight: normal; margin-top: 10px; }
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.resume-btn:hover {
+    background: rgba(35, 134, 54, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Section Headings */
+.section-header {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+/* --- FIX FOR STICKY HEADER COVERAGE --- */
+/* ADDED #education to the list of selectors */
+#about, #education, #experience, #projects, #contact {
+    /* Create an upward counter-margin equal to the nav offset */
+    margin-top: calc(var(--scroll-offset) * -1); 
+    /* Add padding below the margin to push content down */
+    padding-top: var(--scroll-offset); 
+}
+#contact {
+    margin-top: 0; 
+}
+/* ------------------------------------- */
+
+/* General Code Block Styling */
+.code-block {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    font-size: 0.9rem; /* Slightly smaller code font */
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    /* Default for desktop: 2 columns */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 20px;
+}
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s;
+    font-size: 0.95rem;
+}
+.project-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.status-badge {
+    background: var(--success-color);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    border-radius: 12px;
+    float: right;
+}
+
+/* Experience / Timeline Style */
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid var(--border-color);
+    padding-bottom: 30px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--keyword-color);
+}
+.timeline-date { color: var(--comment-color); font-size: 0.85rem; margin-bottom: 5px; }
+.timeline-role { color: var(--string-color); font-size: 1.1rem; font-weight: bold; }
+.timeline-company { color: var(--text-color); }
+.timeline-desc { font-size: 0.9rem; color: var(--text-color); margin-top: 10px; }
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--comment-color);
+    font-size: 0.9rem;
+}
+a { color: var(--accent-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Typing effect cursor */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background-color: var(--accent-color);
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ======================================= */
+/* RESPONSIVE BREAKPOINTS        */
+/* ======================================= */
+
+/* --- Mobile Devices (Max Width 768px) --- */
+@media (max-width: 768px) {
+    
+    .container {
+        padding: 20px 10px; /* Reduced side padding on mobile */
+    }
+
+    /* Adjust Header Font Sizes */
+    h1 {
+        font-size: 2rem; /* Smaller H1 */
+    }
+    h2 {
+        font-size: 1rem; /* Smaller H2 */
+    }
+
+    /* Navigation Stack and Styling */
+    nav {
+        /* Allow nav items to wrap onto multiple lines */
+        flex-wrap: wrap; 
+        justify-content: space-around;
+        gap: 10px;
+        /* Increase height to accommodate wrapping */
+        height: auto; 
+        padding-bottom: 10px;
+    }
+    .nav-item {
+        padding: 5px 8px; /* Smaller nav button padding */
+        font-size: 0.8rem;
+    }
+
+    /* Adjust Scroll Offset for shorter nav height on mobile */
+    :root {
+        --scroll-offset-mobile: 100px;
+    }
+    /* ADDED #education to the mobile offset list */
+    #about, #education, #experience, #projects, #contact {
+        /* Use a fixed, safer mobile offset value */
+        margin-top: calc(var(--scroll-offset-mobile) * -1); 
+        padding-top: var(--scroll-offset-mobile); 
+    }
+
+    /* Projects: Force single column layout */
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 15px;
+    }
+    
+    /* Ensure code blocks are readable */
+    .code-block {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+}

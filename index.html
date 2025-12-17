@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shu Naing Htet</title>
+    <link rel="icon" type="image/png" href="favicon.ico"> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="nav-item" onclick="scrollToId('about')">readme.md</div>
+        <div class="nav-item" onclick="scrollToId('education')">edu.txt</div> 
+        <div class="nav-item" onclick="scrollToId('experience')">experience.log</div>
+        <div class="nav-item" onclick="scrollToId('projects')">projects.json</div>
+        <div class="nav-item" onclick="scrollToId('contact')">contact.sh</div>
+    </nav>
+
+    <header>
+        <div>
+            <span class="keyword">class</span> 
+            <span class="accent">BackendEngineer</span> 
+            <span>{</span>
+        </div>
+        <div style="padding-left: 20px;">
+            <h1>Hi, I'm <span id="name-target">Shu Naing Htet</span><span class="cursor"></span></h1> 
+            <h2>// I’m a developer who builds stable, scalable systems and clean, efficient APIs. I work with Docker, CI/CD, and AWS to automate deployments and improve reliability. I enjoy creating backend solutions for web, mobile, and AI projects, focusing on performance, clear structure, and smooth system operations. </h2>
+            
+            <a href="resume.pdf" class="resume-btn" download target="_blank">
+                $ wget ./resume.pdf
+            </a>
+        </div>
+        <div><span>}</span></div>
+    </header>
+
+    <section id="about">
+        <h3 class="section-header">> ABOUT</h3>
+        <div class="code-block">
+            <span class="comment">// ABOUT ME</span><br>
+            <span class="keyword">const</span> profile = <span class="bracket">{</span><br>
+            &nbsp;&nbsp;<span class="key">current_role</span>: <span class="string">"Backend Developer"</span>,<br>
+            &nbsp;&nbsp;<span class="key">stack</span>: [<span class="string">"Python"</span>, <span class="string">"PHP"</span>, <span class="string">"JavaScript/TypeScript"</span>, <span class="string">"MySQL & NoSQL"</span>, <span class="string">"Docker"</span>, <span class="string">"AWS"</span>],<br>
+            &nbsp;&nbsp;<span class="key">focus</span>: <span class="string">"Scalable Backend Systems & Automation"</span>,<br>
+            &nbsp;&nbsp;<span class="key">location</span>: <span class="string">"Remote / Worldwide"</span><br>
+            <span class="bracket">}</span>;
+        </div>
+    </section>
+
+    <section id="education">
+        <h3 class="section-header">> cat ./edu.txt</h3>
+        </section>
+
+    <section id="experience">
+        <h3 class="section-header">> tail -f /var/log/experience</h3>
+        </section>
+
+    <section id="projects"> 
+        <h3 class="section-header">> GET /api/v1/projects</h3>
+        </section>
+
+    <section id="contact"> 
+        <h3 class="section-header">> CONTACT</h3>
+        <div class="code-block">
+            <span class="comment">// CONTACT INFO</span><br>
+            <span class="keyword">export default</span> <span class="bracket">{</span><br>
+            &nbsp;&nbsp;<span class="key">email</span>: <a href="mailto:shunainghtet.dev@gmail.com" class="string">"shunainghtet.dev@gmail.com"</a>,<br>
+            &nbsp;&nbsp;<span class="key">github</span>: <a href="https://github.com/shunainghtet" class="string" target="_blank">"https://github.com/shunainghtet"</a>,<br>
+            &nbsp;&nbsp;<span class="key">linkedin</span>: <a href="https://www.linkedin.com/in/shu-naing-htet/" class="string" target="_blank">"https://www.linkedin.com/in/shu-naing-htet/"</a><br>
+            <span class="bracket">}</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>exit(0); <span class="comment">// Thanks for exploring my website! 👨🏻‍💻</span></p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
